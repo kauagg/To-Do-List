@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Lista de Tarefas Online - Organize suas atividades de forma simples e eficiente">
+    <title>Lista de Tarefas Online - TaskFlow</title>
+    <link rel="stylesheet" href="assets/todolist.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <h1 class="title">
+                <i class="fas fa-tasks"></i>
+                Lista de Tarefas Online
+            </h1>
+            <p class="subtitle">Organize suas atividades de forma simples e eficiente</p>
+            <div class="dev-info">
+                <span class="dev-name">
+                    <i class="fas fa-code"></i>
+                    Criado por @DEV_KAUAGB
+                </span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Task Input Section -->
+            <section class="task-input-section">
+                <div class="input-group">
+                    <input 
+                        type="text" 
+                        id="taskInput" 
+                        class="task-input" 
+                        placeholder="Digite sua nova tarefa aqui..."
+                        maxlength="200"
+                        aria-label="Nova tarefa"
+                    >
+                    <button 
+                        type="button" 
+                        class="add-btn" 
+                        onclick="addTask()"
+                        aria-label="Adicionar tarefa"
+                    >
+                        <i class="fas fa-plus"></i>
+                        Adicionar
+                    </button>
+                </div>
+                <div class="task-counter">
+                    <span id="taskCounter">0 tarefas</span>
+                </div>
+            </section>
+
+            <!-- Filter Section -->
+            <section class="filter-section">
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-filter="all">
+                        <i class="fas fa-list"></i>
+                        Todas
+                    </button>
+                    <button class="filter-btn" data-filter="pending">
+                        <i class="fas fa-clock"></i>
+                        Pendentes
+                    </button>
+                    <button class="filter-btn" data-filter="completed">
+                        <i class="fas fa-check-circle"></i>
+                        Concluídas
+                    </button>
+                </div>
+                <button class="clear-completed-btn" onclick="clearCompleted()">
+                    <i class="fas fa-trash"></i>
+                    Limpar Concluídas
+                </button>
+            </section>
+
+            <!-- Task List Section -->
+            <section class="task-list-section">
+                <ul id="taskList" class="task-list" role="list">
+                    <!-- Tarefas serão adicionadas aqui dinamicamente -->
+                </ul>
+                
+                <!-- Empty State -->
+                <div id="emptyState" class="empty-state">
+                    <i class="fas fa-clipboard-list"></i>
+                    <h3>Nenhuma tarefa encontrada</h3>
+                    <p>Adicione sua primeira tarefa para começar a organizar seu dia!</p>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2025 TaskFlow - Lista de Tarefas Online</p>
+            <p>Desenvolvido com <i class="fas fa-heart"></i> por @DEV_KAUAGB</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="assets/todolist.js"></script>
+</body>
+</html>
